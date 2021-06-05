@@ -14,8 +14,21 @@
             <div class="col-md-4 offset-md-4">
                 <h4>Student Save</h4>
                 <hr>
-                <form action="" method="post">
-                    <form action="" method="post">
+
+                    <form action="{{ route('ogrencikayit') }}" method="POST">
+
+                    @if (Session::get('success'))
+                        <div class="alert alert-success">
+                            {{ Session::get('success') }}
+                        </div>
+                        @endif
+                        @if (Session::get('fail'))
+                        <div class="alert alert-danger">
+                            {{ Session::get('fail') }}
+                        </div>
+                        @endif
+                        @csrf
+                        
                         <div class="form-group">
                             <label for="name">Student Name</label>
                             <input type="text" class="form-control" name="name" placeholder="Enter your first name">
