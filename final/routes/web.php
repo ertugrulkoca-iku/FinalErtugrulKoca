@@ -14,11 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 Route::get('/',function(){
-    return view('student');
+    return view('studentsave');
 });
 
 Route::get('/studentsave', [StudentController::class, 'ogrencikayitform'])->name('ogrencikayitform');
